@@ -6,6 +6,7 @@ upcoming subclasses
 """
 
 from uuid import uuid4
+from datetime import datetime
 
 
 class BaseModel:
@@ -18,8 +19,13 @@ class BaseModel:
         Constructor method for BaseModel class
         """
         self.id = str(uuid4())
+        self.created_at = datetime()
+        self.updated_at = datetime()
+    
+    def __str__(self) -> str:
+        return f"[{self.__class__.__name__}]"
 
 
 object1 = BaseModel()
 print(object1)
-print(f"id: {object1.id}, type: {type(object1.id)}")
+# print(f"id: {object1.id}, type: {type(object1.id)}")
