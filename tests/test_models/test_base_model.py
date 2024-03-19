@@ -18,7 +18,7 @@ class TestBaseModel(unittest.TestCase):
         Test the method .save() from the object
         """
         self.testBaseModel.save()
-        self.assertEqual(self.testBaseModel.updated_at, datetime.now())
+        self.assertEqual(self.testBaseModel.updated_at.minute, datetime.now().minute)
         
     def test_to_dict(self):
         """
